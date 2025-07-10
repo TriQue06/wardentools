@@ -26,6 +26,21 @@ public class WardenItems {
     public static final Item WARDEN_SWORD = registerItem("warden_sword",
             new DarknessSwordItem(WardenToolMaterials.WARDEN, new Item.Settings().fireproof().attributeModifiers(DarknessSwordItem.createAttributeModifiers(WardenToolMaterials.WARDEN,3, -2.4f))));
 
+    public static final Item SCULKIFIED_SHOVEL = registerItem("sculkified_shovel",
+            new ShovelItem(WardenToolMaterials.SCULKIFIED, new Item.Settings().fireproof().attributeModifiers(ShovelItem.createAttributeModifiers(WardenToolMaterials.SCULKIFIED,1.5f, -3.0f))));
+
+    public static final Item SCULKIFIED_PICKAXE = registerItem("sculkified_pickaxe",
+            new PickaxeItem(WardenToolMaterials.SCULKIFIED, new Item.Settings().fireproof().attributeModifiers(PickaxeItem.createAttributeModifiers(WardenToolMaterials.SCULKIFIED,1f, -2.8f))));
+
+    public static final Item SCULKIFIED_AXE = registerItem("sculkified_axe",
+            new DarknessAxeItem(WardenToolMaterials.SCULKIFIED, new Item.Settings().fireproof().attributeModifiers(DarknessAxeItem.createAttributeModifiers(WardenToolMaterials.SCULKIFIED,5, -3f))));
+
+    public static final Item SCULKIFIED_HOE = registerItem("sculkified_hoe",
+            new HoeItem(WardenToolMaterials.SCULKIFIED,new Item.Settings().fireproof().attributeModifiers(HoeItem.createAttributeModifiers(WardenToolMaterials.SCULKIFIED,-4, 0.0f))));
+
+    public static final Item SCULKIFIED_SWORD = registerItem("sculkified_sword",
+            new DarknessSwordItem(WardenToolMaterials.SCULKIFIED, new Item.Settings().fireproof().attributeModifiers(DarknessSwordItem.createAttributeModifiers(WardenToolMaterials.SCULKIFIED,3, -2.4f))));
+
     public static final Item WARDEN_HELMET = registerItem("warden_helmet",
             new ArmorEffectItem(WardenArmorMaterials.WARDEN, ArmorItem.Type.HELMET, new Item.Settings().fireproof().maxDamage(net.minecraft.item.ArmorItem.Type.HELMET.getMaxDamage(48)), StatusEffects.RESISTANCE));
 

@@ -33,6 +33,11 @@ public class WardenItemGroup {
                         entries.add(WardenItems.WARDEN_AXE);
                         entries.add(WardenItems.WARDEN_HOE);
                         entries.add(WardenItems.WARDEN_SWORD);
+                        entries.add(WardenItems.SCULKIFIED_SHOVEL);
+                        entries.add(WardenItems.SCULKIFIED_PICKAXE);
+                        entries.add(WardenItems.SCULKIFIED_AXE);
+                        entries.add(WardenItems.SCULKIFIED_HOE);
+                        entries.add(WardenItems.SCULKIFIED_SWORD);
                         entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW,WardenPotion.WARDEN_SLAYER_POTION));
                         entries.add(WardenItems.WARDEN_HELMET);
                         entries.add(WardenItems.WARDEN_CHESTPLATE);

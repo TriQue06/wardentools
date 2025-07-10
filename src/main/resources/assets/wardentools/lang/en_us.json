@@ -21,6 +21,13 @@
   "item.wardentools.warden_pickaxe": "Warden Pickaxe",
   "item.wardentools.warden_shovel": "Warden Shovel",
   "item.wardentools.warden_hoe": "Warden Hoe",
+
+  "item.wardentools.sculkified_sword": "Sculkified Sword",
+  "item.wardentools.sculkified_axe": "Sculkified Axe",
+  "item.wardentools.sculkified_pickaxe": "Sculkified Pickaxe",
+  "item.wardentools.sculkified_shovel": "Sculkified Shovel",
+  "item.wardentools.sculkified_hoe": "Sculkified Hoe",
+  
   "item.wardentools.echo_staff": "Echo Staff",
   "item.wardentools.rose_gold_upgraded_echo_staff": "Rose Gold Upgraded Echo Staff",
   "item.wardentools.amethyst_upgraded_echo_staff": "Amethyst Upgraded Echo Staff",

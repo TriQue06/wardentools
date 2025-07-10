@@ -30,6 +30,11 @@ public class WardenRecipeGenerator extends FabricRecipeProvider {
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_CHESTPLATE,WardenItems.SCULK_SHELL, RecipeCategory.COMBAT,WardenItems.WARDEN_CHESTPLATE);
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_LEGGINGS,WardenItems.SCULK_SHELL, RecipeCategory.COMBAT,WardenItems.WARDEN_LEGGINGS);
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_BOOTS,WardenItems.SCULK_SHELL, RecipeCategory.COMBAT,WardenItems.WARDEN_BOOTS);
+        offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_SWORD,WardenItems.SCULK_SHELL, RecipeCategory.COMBAT,WardenItems.SCULKIFIED_SWORD);
+        offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_AXE,WardenItems.SCULK_SHELL, RecipeCategory.COMBAT,WardenItems.SCULKIFIED_AXE);
+        offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_PICKAXE,WardenItems.SCULK_SHELL, RecipeCategory.TOOLS,WardenItems.SCULKIFIED_PICKAXE);
+        offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_HOE,WardenItems.SCULK_SHELL, RecipeCategory.TOOLS,WardenItems.SCULKIFIED_HOE);
+        offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_SHOVEL,WardenItems.SCULK_SHELL, RecipeCategory.TOOLS,WardenItems.SCULKIFIED_SHOVEL);
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_HELMET,WardenItems.ECHO_INGOT, RecipeCategory.COMBAT,WardenItems.SCULKIFIED_HELMET);
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_CHESTPLATE,WardenItems.ECHO_INGOT, RecipeCategory.COMBAT,WardenItems.SCULKIFIED_CHESTPLATE);
         offerCustomUpgradeRecipe(exporter,WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE,Items.NETHERITE_LEGGINGS,WardenItems.ECHO_INGOT, RecipeCategory.COMBAT,WardenItems.SCULKIFIED_LEGGINGS);
