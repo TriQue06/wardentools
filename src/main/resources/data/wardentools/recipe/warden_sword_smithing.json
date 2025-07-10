@@ -4,7 +4,7 @@
     "item": "wardentools:sculk_shell"
   },
   "base": {
-    "item": "minecraft:netherite_sword"
+    "item": "wardentools:sculkified_sword"
   },
   "result": {
     "count": 1,

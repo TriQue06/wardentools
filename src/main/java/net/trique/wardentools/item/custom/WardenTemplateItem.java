@@ -29,6 +29,7 @@ public class WardenTemplateItem extends SmithingTemplateItem {
     private static final Identifier EMPTY_SLOT_SHOVEL_TEXTURE;
     private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE;
     private static final Identifier EMPTY_SLOT_SCULK_SHELL_TEXTURE;
+    private static final Identifier EMPTY_SLOT_ECHO_INGOT_TEXTURE;
     private final Text baseSlotDescriptionText;
     private final Text additionsSlotDescriptionText;
     private final List<Identifier> emptyBaseSlotTextures;
@@ -51,7 +52,7 @@ public class WardenTemplateItem extends SmithingTemplateItem {
     }
 
     private static List<Identifier> getWardenUpgradeEmptyAdditionsSlotTextures() {
-        return List.of(EMPTY_SLOT_SCULK_SHELL_TEXTURE);
+        return List.of(EMPTY_SLOT_SCULK_SHELL_TEXTURE, EMPTY_SLOT_ECHO_INGOT_TEXTURE);
     }
 
     public Text getBaseSlotDescription() {
@@ -95,5 +96,6 @@ public class WardenTemplateItem extends SmithingTemplateItem {
         EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("minecraft:item/empty_slot_shovel");
         EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("minecraft:item/empty_slot_pickaxe");
         EMPTY_SLOT_SCULK_SHELL_TEXTURE = Identifier.of("wardentools:item/empty_slot_sculk_shell");
+        EMPTY_SLOT_ECHO_INGOT_TEXTURE = Identifier.of("wardentools:item/empty_slot_echo_ingot");
     }
 }

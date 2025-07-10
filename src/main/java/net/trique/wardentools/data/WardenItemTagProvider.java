@@ -22,16 +22,20 @@ public class WardenItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(WardenItems.WARDEN_SWORD);
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(WardenItems.WARDEN_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.AXES).add(WardenItems.WARDEN_AXE);
-        getOrCreateTagBuilder(ItemTags.HOES).add(WardenItems.WARDEN_HOE);
-        getOrCreateTagBuilder(ItemTags.PICKAXES).add(WardenItems.WARDEN_PICKAXE);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(WardenItems.SCULKIFIED_SWORD);
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(WardenItems.SCULKIFIED_SHOVEL);
         getOrCreateTagBuilder(ItemTags.AXES).add(WardenItems.SCULKIFIED_AXE);
         getOrCreateTagBuilder(ItemTags.HOES).add(WardenItems.SCULKIFIED_HOE);
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(WardenItems.SCULKIFIED_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(WardenItems.SCULKIFIED_HELMET);
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(WardenItems.SCULKIFIED_CHESTPLATE);
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR).add(WardenItems.SCULKIFIED_LEGGINGS);
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR).add(WardenItems.SCULKIFIED_BOOTS);
+        getOrCreateTagBuilder(ItemTags.SWORDS).add(WardenItems.WARDEN_SWORD);
+        getOrCreateTagBuilder(ItemTags.SHOVELS).add(WardenItems.WARDEN_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.AXES).add(WardenItems.WARDEN_AXE);
+        getOrCreateTagBuilder(ItemTags.HOES).add(WardenItems.WARDEN_HOE);
+        getOrCreateTagBuilder(ItemTags.PICKAXES).add(WardenItems.WARDEN_PICKAXE);
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(WardenItems.WARDEN_HELMET);
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(WardenItems.WARDEN_CHESTPLATE);
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR).add(WardenItems.WARDEN_LEGGINGS);

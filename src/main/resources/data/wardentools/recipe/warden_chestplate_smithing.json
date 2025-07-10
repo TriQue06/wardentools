@@ -4,7 +4,7 @@
     "item": "wardentools:sculk_shell"
   },
   "base": {
-    "item": "minecraft:netherite_chestplate"
+    "item": "wardentools:sculkified_chestplate"
   },
   "result": {
     "count": 1,
