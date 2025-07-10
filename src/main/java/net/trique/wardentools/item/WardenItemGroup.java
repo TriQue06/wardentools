@@ -53,6 +53,7 @@ public class WardenItemGroup {
                         entries.add(WardenItems.ECHO_APPLE);
                         entries.add(WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(WardenItems.ECHO_INGOT);
+                        entries.add(WardenItems.SCULK_ARROW);
                         entries.add(Items.ECHO_SHARD);
                         entries.add(PotionContentsComponent.createStack(Items.POTION,WardenPotion.WARDEN_SLAYER_POTION));
                         entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION,WardenPotion.WARDEN_SLAYER_POTION));
