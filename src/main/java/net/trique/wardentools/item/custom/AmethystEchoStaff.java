@@ -33,12 +33,17 @@ public class AmethystEchoStaff extends Item {
 
     public AmethystEchoStaff(Settings settings) {
         super(settings.attributeModifiers(createAttributeModifiers()));
-
     }
+
     public static AttributeModifiersComponent createAttributeModifiers() {
         return AttributeModifiersComponent.builder()
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 3.0f, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, 0f, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build();
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
     }
 
     @Override
@@ -59,7 +64,7 @@ public class AmethystEchoStaff extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack, LivingEntity usr) {
-        return 20;
+        return 15;
     }
 
     @Override
@@ -80,7 +85,7 @@ public class AmethystEchoStaff extends Item {
                 if (!echoShardStack.isEmpty()) {
                     spawnSonicBoom(world, user);
                     echoShardStack.decrement(1);
-                    player.getItemCooldownManager().set(this, 80);
+                    player.getItemCooldownManager().set(this, 60);
                     stack.damage(1, user, EquipmentSlot.MAINHAND);
                 }
             }else {

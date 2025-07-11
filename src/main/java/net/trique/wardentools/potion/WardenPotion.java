@@ -18,7 +18,7 @@ public class WardenPotion{
                     new Potion(
                             new StatusEffectInstance(
                                     Registries.STATUS_EFFECT.getEntry(WardenToolsEffects.WARDEN_SLAYER_EFFECT.value()),
-                                    1200,
+                                    2400,
                                     0
                             )
                     )
