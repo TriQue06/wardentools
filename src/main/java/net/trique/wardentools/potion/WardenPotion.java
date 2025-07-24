@@ -14,10 +14,10 @@ import net.trique.wardentools.item.WardenItems;
 
 public class WardenPotion{
     public static final RegistryEntry<Potion> WARDEN_SLAYER_POTION =
-            Registry.registerReference(Registries.POTION, Identifier.of(WardenTools.MOD_ID, "warden_slayer"),
+            Registry.registerReference(Registries.POTION, Identifier.of(WardenTools.MOD_ID, "sculk_adaption"),
                     new Potion(
                             new StatusEffectInstance(
-                                    Registries.STATUS_EFFECT.getEntry(WardenToolsEffects.WARDEN_SLAYER_EFFECT.value()),
+                                    Registries.STATUS_EFFECT.getEntry(WardenToolsEffects.SCULK_ADAPTION_EFFECT.value()),
                                     2400,
                                     0
                             )

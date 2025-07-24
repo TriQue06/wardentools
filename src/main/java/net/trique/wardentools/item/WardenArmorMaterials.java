@@ -29,20 +29,22 @@ public class WardenArmorMaterials{
 
     public static final RegistryEntry<ArmorMaterial> SCULKIFIED = registerMaterial("sculkified",
             Map.of(
-                    Type.HELMET,3,
-                    Type.CHESTPLATE, 7,
-                    Type.LEGGINGS, 8,
-                    Type.BOOTS,3
-            ),12, SonicBoomSound.SONIC_BOOM_SOUND,
-            () -> Ingredient.ofItems(WardenItems.ECHO_INGOT),2.0f,0.1f,false);
+                    Type.BOOTS,4,
+                    Type.LEGGINGS, 7,
+                    Type.CHESTPLATE, 9,
+                    Type.HELMET,4,
+                    Type.BODY,12
+            ),18, SonicBoomSound.SONIC_BOOM_SOUND,
+            () -> Ingredient.ofItems(WardenItems.ECHO_INGOT),4.0f,0.1f,false);
 
     public static final RegistryEntry<ArmorMaterial> WARDEN = registerMaterial("warden",
             Map.of(
-                    Type.HELMET,4,
-                    Type.CHESTPLATE, 8,
-                    Type.LEGGINGS, 9,
-                    Type.BOOTS,4
-            ),15, SonicBoomSound.SONIC_BOOM_SOUND,
-            () -> Ingredient.ofItems(WardenItems.SCULK_SHELL),3.0f,0.1f,false);
+                    Type.BOOTS,5,
+                    Type.LEGGINGS, 8,
+                    Type.CHESTPLATE, 10,
+                    Type.HELMET,5,
+                    Type.BODY,13
+            ),21, SonicBoomSound.SONIC_BOOM_SOUND,
+            () -> Ingredient.ofItems(WardenItems.SCULK_SHELL),5.0f,0.1f,false);
 
 }

@@ -42,17 +42,17 @@
   "block.wardentools.medium_sculkhyst_bud": "Medium Sculkhyst Bud",
   "block.wardentools.small_sculkhyst_bud": "Small Sculkhyst Bud",
 
-  "effect.wardentools.warden_slayer": "Warden Slayer",
+  "effect.wardentools.sculk_adaption": "Sculk Adaption",
 
   "item.minecraft.smithing_template.warden_upgrade.additions_slot_description": "Add Sculk Shell",
   "item.minecraft.smithing_template.warden_upgrade.applies_to": "Netherite Equipment",
   "item.minecraft.smithing_template.warden_upgrade.base_slot_description": "Add netherite armor, weapon, or tool",
   "item.minecraft.smithing_template.warden_upgrade.ingredients": "Sculk Shell",
 
-  "item.minecraft.potion.effect.warden_slayer": "Warden Slayer Potion",
-  "item.minecraft.splash_potion.effect.warden_slayer": "Splash Potion of the Warden Slayer",
-  "item.minecraft.lingering_potion.effect.warden_slayer": "Lingering Potion of the Warden Slayer",
-  "item.minecraft.tipped_arrow.effect.warden_slayer": "Arrow of the Warden Slayer",
+  "item.minecraft.potion.effect.sculk_adaption": "Sculk Adaption Potion",
+  "item.minecraft.splash_potion.effect.sculk_adaption": "Splash Potion of Sculk Adaption",
+  "item.minecraft.lingering_potion.effect.sculk_adaption": "Lingering Potion of Sculk Adaption",
+  "item.minecraft.tipped_arrow.effect.sculk_adaption": "Arrow of Sculk Adaption",
 
   "upgrade.minecraft.warden_upgrade": "Warden Upgrade"
 }

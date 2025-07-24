@@ -41,11 +41,11 @@ public abstract class LivingEntityMixin {
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
-    private void clearDarknessBlindnessIfWardenArmor(CallbackInfo ci) {
+    private void clearDarknessBlindnessIfSculkAdapted(CallbackInfo ci) {
         LivingEntity self = (LivingEntity)(Object)this;
 
         if (!self.getWorld().isClient()) {
-            if (self.hasStatusEffect(WardenToolsEffects.WARDEN_SLAYER_EFFECT)) {
+            if (self.hasStatusEffect(WardenToolsEffects.SCULK_ADAPTION_EFFECT)) {
                 if (self.hasStatusEffect(StatusEffects.DARKNESS)) {
                     self.removeStatusEffect(StatusEffects.DARKNESS);
                 }

@@ -3,9 +3,9 @@ package net.trique.wardentools.effect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class WardenSlayerEffect extends StatusEffect {
+public class SculkAdaptionEffect extends StatusEffect {
 
-    public WardenSlayerEffect(StatusEffectCategory category, int color) {
+    public SculkAdaptionEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 

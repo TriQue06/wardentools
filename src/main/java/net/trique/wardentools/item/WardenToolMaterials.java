@@ -10,8 +10,8 @@ import net.minecraft.registry.tag.TagKey;
 import java.util.function.Supplier;
 
 public enum WardenToolMaterials implements ToolMaterial {
-    SCULKIFIED(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3006, 11.0f, 6.0f, 18, () -> Ingredient.ofItems(WardenItems.ECHO_INGOT)),
-    WARDEN(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3006, 11.0f, 6.0f, 18, () -> Ingredient.ofItems(WardenItems.SCULK_SHELL));
+    SCULKIFIED(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2106, 10.0f, 5.0f, 18, () -> Ingredient.ofItems(WardenItems.ECHO_INGOT)),
+    WARDEN(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3006, 11.0f, 6.0f, 21, () -> Ingredient.ofItems(WardenItems.SCULK_SHELL));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

@@ -10,18 +10,18 @@ import net.trique.wardentools.WardenTools;
 
 public class WardenToolsEffects {
 
-    public static  RegistryEntry<StatusEffect> WARDEN_SLAYER_EFFECT;
+    public static  RegistryEntry<StatusEffect> SCULK_ADAPTION_EFFECT;
 
     private static RegistryEntry<StatusEffect> registerStatuesEffect(StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT,
-                Identifier.of(WardenTools.MOD_ID, "warden_slayer"),
+                Identifier.of(WardenTools.MOD_ID, "sculk_adaption"),
                 statusEffect
         );
     }
 
     public static void regEffect(){
-        WARDEN_SLAYER_EFFECT =
-                    registerStatuesEffect(new WardenSlayerEffect(StatusEffectCategory.BENEFICIAL,0x009295));
-        WardenTools.LOGGER.info("Register Warden effect");
+        SCULK_ADAPTION_EFFECT =
+                    registerStatuesEffect(new SculkAdaptionEffect(StatusEffectCategory.BENEFICIAL,0x009295));
+        WardenTools.LOGGER.info("Registering Warden Effects");
     }
 }

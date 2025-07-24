@@ -33,6 +33,6 @@ public class WardenTools implements ModInitializer {
 		WardenPotion.RegPotion();
 		WardenParticles.regParticles();
 		WardenEntities.registerWardenEntities();
-		LOGGER.info("Warden Tools works properly! NECO, ANNENE SELAMLAR KARDESIM! <3");
+		LOGGER.info("Warden Tools works properly! Geliştirme sürecinde bana sürekli inanan Neco'ya.");
 	}
 }

@@ -23,7 +23,7 @@ public abstract class WardenMixin extends HostileEntity {
     @Inject(method = "damage", at = @At(value = "HEAD"))
     private void applyExtraDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (source.getAttacker() instanceof LivingEntity attacker) {
-            StatusEffectInstance effect = attacker.getStatusEffect(WardenToolsEffects.WARDEN_SLAYER_EFFECT);
+            StatusEffectInstance effect = attacker.getStatusEffect(WardenToolsEffects.SCULK_ADAPTION_EFFECT);
             if (effect != null) {
                 this.timeUntilRegen = 0;
                 super.damage(source, amount*3);
