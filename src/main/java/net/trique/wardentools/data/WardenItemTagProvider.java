@@ -22,6 +22,7 @@ public class WardenItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(ItemTags.ARROWS).add(WardenItems.SCULK_ARROW);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(WardenItems.SCULKIFIED_SWORD);
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(WardenItems.SCULKIFIED_SHOVEL);
         getOrCreateTagBuilder(ItemTags.AXES).add(WardenItems.SCULKIFIED_AXE);

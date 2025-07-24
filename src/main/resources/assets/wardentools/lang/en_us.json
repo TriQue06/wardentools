@@ -2,9 +2,12 @@
   "item.wardentools.warden_upgrade_smithing_template": "Smithing Template",
 
   "item.wardentools.warden_soul": "Soul of Warden",
-  "item.wardentools.echo_ingot": "Echo Ingot",
   "item.wardentools.echo_apple": "Echo Apple",
   "item.wardentools.sculk_shell": "Sculk Shell",
+
+  "item.wardentools.echo_ingot": "Echo Ingot",
+  "item.wardentools.rose_gold_ingot": "Rose Gold Ingot",
+  "item.wardentools.amethyst_ingot": "Amethyst Ingot",
 
   "item.wardentools.warden_helmet": "Warden Helmet",
   "item.wardentools.warden_chestplate": "Warden Chestplate",
@@ -31,6 +34,7 @@
   "item.wardentools.echo_staff": "Echo Staff",
   "item.wardentools.rose_gold_upgraded_echo_staff": "Rose Gold Upgraded Echo Staff",
   "item.wardentools.amethyst_upgraded_echo_staff": "Amethyst Upgraded Echo Staff",
+  "item.wardentools.ender_upgraded_echo_staff": "Ender Upgraded Echo Staff",
   "item.wardentools.echo_shrieker": "Echo Shrieker",
   "item.wardentools.shrieker_fang": "Shrieker Fang",
   "item.wardentools.sculk_arrow": "Sculk Arrow",
@@ -44,15 +48,15 @@
 
   "effect.wardentools.sculk_adaption": "Sculk Adaption",
 
-  "item.minecraft.smithing_template.warden_upgrade.additions_slot_description": "Add Sculk Shell",
-  "item.minecraft.smithing_template.warden_upgrade.applies_to": "Netherite Equipment",
-  "item.minecraft.smithing_template.warden_upgrade.base_slot_description": "Add netherite armor, weapon, or tool",
-  "item.minecraft.smithing_template.warden_upgrade.ingredients": "Sculk Shell",
+  "item.minecraft.smithing_template.warden_upgrade.additions_slot_description": "Add Echo Ingot or Sculk Shell",
+  "item.minecraft.smithing_template.warden_upgrade.applies_to": "Netherite and Sculkified Equipment",
+  "item.minecraft.smithing_template.warden_upgrade.base_slot_description": "Add netherite/sculkified armor, weapon, or tool",
+  "item.minecraft.smithing_template.warden_upgrade.ingredients": "Echo Ingot and Sculk Shell",
 
   "item.minecraft.potion.effect.sculk_adaption": "Sculk Adaption Potion",
   "item.minecraft.splash_potion.effect.sculk_adaption": "Splash Potion of Sculk Adaption",
   "item.minecraft.lingering_potion.effect.sculk_adaption": "Lingering Potion of Sculk Adaption",
   "item.minecraft.tipped_arrow.effect.sculk_adaption": "Arrow of Sculk Adaption",
 
-  "upgrade.minecraft.warden_upgrade": "Warden Upgrade"
+  "upgrade.minecraft.warden_upgrade": "Sculkified and Warden Upgrade"
 }

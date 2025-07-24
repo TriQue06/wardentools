@@ -7,13 +7,12 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -31,16 +30,21 @@ import net.trique.wardentools.particle.WardenParticles;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AmethystEchoStaff extends Item {
+public class EnderEchoStaff extends Item {
 
-    public AmethystEchoStaff(Settings settings) {
+    public EnderEchoStaff(Settings settings) {
         super(settings.attributeModifiers(createAttributeModifiers()));
     }
 
     public static AttributeModifiersComponent createAttributeModifiers() {
         return AttributeModifiersComponent.builder()
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 3.0f, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, 0f, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build();
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 3.0f, EntityAttributeModifier.Operation.ADD_VALUE),
+                        AttributeModifierSlot.MAINHAND)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED,
+                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, 0f, EntityAttributeModifier.Operation.ADD_VALUE),
+                        AttributeModifierSlot.MAINHAND)
+                .build();
     }
 
     @Override
@@ -66,32 +70,33 @@ public class AmethystEchoStaff extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack, LivingEntity usr) {
-        return 15;
+        return 20;
     }
 
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         super.usageTick(world, user, stack, remainingUseTicks);
 
-        if(getMaxUseTime(stack, user) - remainingUseTicks == 1) {
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_WARDEN_SONIC_CHARGE, SoundCategory.BLOCKS, 3.0f, 1.0f);
+        if (getMaxUseTime(stack, user) - remainingUseTicks == 1) {
+            world.playSound(null, user.getX(), user.getY(), user.getZ(),
+                    SoundEvents.ENTITY_WARDEN_SONIC_CHARGE, SoundCategory.BLOCKS, 3.0f, 1.0f);
         }
     }
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (!world.isClient && user instanceof PlayerEntity player) {
-            if (!player.isCreative()){
+            if (!player.isCreative()) {
                 ItemStack echoShardStack = findEchoShard(player);
 
                 if (!echoShardStack.isEmpty()) {
                     spawnSonicBoom(world, user);
                     echoShardStack.decrement(1);
-                    player.getItemCooldownManager().set(this, 60);
+                    player.getItemCooldownManager().set(this, 80);
                     stack.damage(1, user, EquipmentSlot.MAINHAND);
                 }
-            }else {
-            spawnSonicBoom(world, user);
+            } else {
+                spawnSonicBoom(world, user);
             }
         }
 
@@ -109,8 +114,8 @@ public class AmethystEchoStaff extends Item {
     }
 
     private void spawnSonicBoom(World world, LivingEntity user) {
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_WARDEN_SONIC_BOOM, SoundCategory.BLOCKS, 2.0f, 1.0f);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_PLACE, SoundCategory.BLOCKS, 4.0f, 1.0f);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(),
+                SoundEvents.ENTITY_WARDEN_SONIC_BOOM, SoundCategory.BLOCKS, 5.0f, 1.0f);
 
         float heightOffset = 1.6f;
         int distance = 20;
@@ -122,22 +127,53 @@ public class AmethystEchoStaff extends Item {
         Set<Entity> hit = new HashSet<>();
         for (int particleIndex = 1; particleIndex < MathHelper.floor(offsetToTarget.length()) + 7; ++particleIndex) {
             Vec3d particlePos = source.add(normalized.multiply(particleIndex));
-            ((ServerWorld) world).spawnParticles(WardenParticles.AMETHYST_SONIC_BOOM, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+            if (world instanceof ServerWorld serverWorld) {
+                serverWorld.spawnParticles(WardenParticles.ENDER_SONIC_BOOM,
+                        particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+            }
 
-            hit.addAll(world.getEntitiesByClass(LivingEntity.class, new Box(new BlockPos((int) particlePos.getX(),
-                            (int) particlePos.getY(), (int) particlePos.getZ())).expand(1),
+            hit.addAll(world.getEntitiesByClass(LivingEntity.class,
+                    new Box(BlockPos.ofFloored(particlePos)).expand(1),
                     it -> !(it instanceof TameableEntity helper && helper.isOwner(user))));
         }
-
         hit.remove(user);
 
         for (Entity hitTarget : hit) {
-            if(hitTarget instanceof LivingEntity living) {
+            if (hitTarget instanceof LivingEntity living) {
                 living.damage(world.getDamageSources().sonicBoom(user), 10.0f);
-                living.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 60, 0));
-                double vertical = 0.8 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
-                double horizontal = 10.0 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
-                living.addVelocity(normalized.getX() * horizontal, normalized.getY() * vertical, normalized.getZ() * horizontal);
+
+                // 32x alan içinde rastgele teleport
+                double range = 16.0;
+                double x = living.getX() + (world.getRandom().nextDouble() * 2 - 1) * range;
+                double z = living.getZ() + (world.getRandom().nextDouble() * 2 - 1) * range;
+
+                double baseY = living.getY();
+                double y = baseY + (world.getRandom().nextInt(7) - 3); // ±3 blok oynama
+
+                BlockPos groundPos = new BlockPos((int) x, (int) y, (int) z);
+
+                while (world.getBlockState(groundPos).isAir() && groundPos.getY() > world.getBottomY()) {
+                    groundPos = groundPos.down();
+                }
+
+                BlockPos headPos = groundPos.up(2);
+                boolean isSafe =
+                        world.getBlockState(groundPos).isOpaque()
+                                && world.getBlockState(groundPos.up()).isAir()
+                                && world.getBlockState(headPos).isAir();
+
+                if (isSafe) {
+                    Vec3d teleportPos = Vec3d.ofCenter(groundPos.up());
+                    if (living.teleport(teleportPos.x, teleportPos.y, teleportPos.z, true)) {
+                        world.playSound(null, teleportPos.x, teleportPos.y, teleportPos.z,
+                                SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+
+                        if (world instanceof ServerWorld serverWorld) {
+                            serverWorld.spawnParticles(ParticleTypes.PORTAL, teleportPos.x, teleportPos.y, teleportPos.z,
+                                    30, 0.3, 0.3, 0.3, 0.1);
+                        }
+                    }
+                }
             }
         }
     }

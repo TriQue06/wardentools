@@ -26,13 +26,12 @@ public class WardenTools implements ModInitializer {
 		WardenBlocks.registerWardenBlocks();
 		WardenItemGroup.registerWardenGroups();
 		WardenWorldGeneration.generateWardenWorldGen();
-		WardenLootTableModifiers.replaceLootTables();
 		WardenLootTableModifiers.modifyLootTables();
 		WardenArmorMaterials.initialize();
 		WardenToolsEffects.regEffect();
 		WardenPotion.RegPotion();
 		WardenParticles.regParticles();
 		WardenEntities.registerWardenEntities();
-		LOGGER.info("Warden Tools works properly! Geliştirme sürecinde bana sürekli inanan Neco'ya.");
+		LOGGER.info("Warden Tools works properly! Geliştirme sürecinde bana sürekli inanan Neco'ya sevgilerle...");
 	}
 }

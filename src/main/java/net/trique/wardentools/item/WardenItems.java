@@ -71,13 +71,16 @@ public class WardenItems {
             new Item(new Item.Settings().rarity(Rarity.EPIC).fireproof()));
 
     public static final Item ECHO_STAFF = registerItem("echo_staff",
-            new EchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(35)));
+            new EchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(76)));
 
     public static final Item ROSE_GOLD_UPGRADED_ECHO_STAFF = registerItem("rose_gold_upgraded_echo_staff",
-            new RoseGoldEchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(35)));
+            new RoseGoldEchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(76)));
 
     public static final Item AMETHYST_UPGRADED_ECHO_STAFF = registerItem("amethyst_upgraded_echo_staff",
-            new AmethystEchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(35)));
+            new AmethystEchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(76)));
+
+    public static final Item ENDER_UPGRADED_ECHO_STAFF = registerItem("ender_upgraded_echo_staff",
+            new EnderEchoStaff(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(76)));
 
     public static final Item ECHO_SHRIEKER = registerItem("echo_shrieker",
             new EchoShrieker(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(50)));
@@ -89,6 +92,12 @@ public class WardenItems {
             new Item(new Item.Settings().rarity(Rarity.RARE).fireproof()));
 
     public static final Item ECHO_INGOT = registerItem("echo_ingot",
+            new Item(new Item.Settings().rarity(Rarity.RARE).fireproof()));
+
+    public static final Item ROSE_GOLD_INGOT = registerItem("rose_gold_ingot",
+            new Item(new Item.Settings().rarity(Rarity.RARE).fireproof()));
+
+    public static final Item AMETHYST_INGOT = registerItem("amethyst_ingot",
             new Item(new Item.Settings().rarity(Rarity.RARE).fireproof()));
 
     public static final Item SCULK_ARROW = registerItem("sculk_arrow",

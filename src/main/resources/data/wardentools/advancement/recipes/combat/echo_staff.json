@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "wardentools:warden_soul"
+            "items": "wardentools:sculk_shell"
           }
         ]
       },
@@ -16,12 +16,23 @@
         "recipe": "wardentools:echo_staff"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warden_soul": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wardentools:warden_soul"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_sculk_shell"
+      "has_sculk_shell",
+      "has_warden_soul"
     ]
   ],
   "rewards": {

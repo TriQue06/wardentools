@@ -10,14 +10,11 @@
     },
     "r": {
       "item": "minecraft:string"
-    },
-    "s": {
-      "item": "wardentools:echo_staff"
     }
   },
   "pattern": [
     "fhr",
-    " sr",
+    "  r",
     "fhr"
   ],
   "result": {

@@ -6,7 +6,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
@@ -34,9 +33,6 @@ public class SculkArrowEntity extends ArrowEntity {
         super.onHit(target);
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 100, 0));
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 1));
-        this.getWorld().addParticle(ParticleTypes.SCULK_SOUL,
-                target.getX(), target.getBodyY(0.5), target.getZ(),
-                0.1, 0.1, 0.1);
         this.getWorld().playSound(null, target.getBlockPos(),
                 SoundEvents.ENTITY_WARDEN_SONIC_BOOM, SoundCategory.PLAYERS,
                 1.0F, 1.0F);

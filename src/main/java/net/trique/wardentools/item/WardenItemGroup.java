@@ -45,9 +45,12 @@ public class WardenItemGroup {
                         entries.add(WardenItems.ECHO_STAFF);
                         entries.add(WardenItems.ROSE_GOLD_UPGRADED_ECHO_STAFF);
                         entries.add(WardenItems.AMETHYST_UPGRADED_ECHO_STAFF);
+                        entries.add(WardenItems.ENDER_UPGRADED_ECHO_STAFF);
                         entries.add(WardenItems.ECHO_APPLE);
                         entries.add(Items.ECHO_SHARD);
                         entries.add(WardenItems.ECHO_INGOT);
+                        entries.add(WardenItems.ROSE_GOLD_INGOT);
+                        entries.add(WardenItems.AMETHYST_INGOT);
                         entries.add(WardenItems.WARDEN_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(WardenItems.ECHO_SHRIEKER);
                         entries.add(WardenItems.WARDEN_SOUL);

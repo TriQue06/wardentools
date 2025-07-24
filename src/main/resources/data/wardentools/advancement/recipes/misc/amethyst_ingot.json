@@ -1,21 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_apple": {
+    "has_amethyst_shard": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:apple"
+            "items": "minecraft:amethyst_shard"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_echo_shard": {
+    "has_echo_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:echo_shard"
+            "items": "wardentools:echo_ingot"
           }
         ]
       },
@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wardentools:echo_apple"
+        "recipe": "wardentools:amethyst_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,13 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_apple",
-      "has_echo_shard"
+      "has_amethyst_shard",
+      "has_echo_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "wardentools:echo_apple"
+      "wardentools:amethyst_ingot"
     ]
   }
 }

@@ -21,7 +21,7 @@ public class SculkArrowItem extends ArrowItem {
     @Override
     public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter, @Nullable ItemStack shotFrom) {
         SculkArrowEntity arrow = new SculkArrowEntity(world, shooter);
-        arrow.setDamage(20);
+        arrow.setDamage(4);
         arrow.setCritical(true);
         return arrow;
     }

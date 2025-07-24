@@ -25,6 +25,7 @@ public class WardenToolsClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(WardenParticles.SHRIEK_PARTICLE, ShriekParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(WardenParticles.ROSE_GOLD_SONIC_BOOM, RoseGoldSonicBoomParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(WardenParticles.AMETHYST_SONIC_BOOM, AmethystSonicBoomParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(WardenParticles.ENDER_SONIC_BOOM, AmethystSonicBoomParticle.Factory::new);
         EntityRendererRegistry.register(WardenEntities.SCULK_ARROW_ENTITY, SculkArrowRenderer::new);
     }
 }
