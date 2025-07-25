@@ -135,8 +135,8 @@ public class AmethystEchoStaff extends Item {
             if(hitTarget instanceof LivingEntity living) {
                 living.damage(world.getDamageSources().sonicBoom(user), 10.0f);
                 living.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 60, 0));
-                double vertical = 0.8 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
-                double horizontal = 10.0 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
+                double vertical = 0.6 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
+                double horizontal = 7.5 * (1.0 - living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
                 living.addVelocity(normalized.getX() * horizontal, normalized.getY() * vertical, normalized.getZ() * horizontal);
             }
         }

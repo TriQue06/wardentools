@@ -24,6 +24,8 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.event.GameEvent.Emitter;
 import net.trique.wardentools.item.WardenItems;
 import net.trique.wardentools.particle.WardenParticles;
 
@@ -99,7 +101,6 @@ public class EnderEchoStaff extends Item {
                 spawnSonicBoom(world, user);
             }
         }
-
         return super.finishUsing(stack, world, user);
     }
 
@@ -125,53 +126,47 @@ public class EnderEchoStaff extends Item {
         Vec3d normalized = offsetToTarget.normalize();
 
         Set<Entity> hit = new HashSet<>();
-        for (int particleIndex = 1; particleIndex < MathHelper.floor(offsetToTarget.length()) + 7; ++particleIndex) {
-            Vec3d particlePos = source.add(normalized.multiply(particleIndex));
+        for (int i = 1; i < MathHelper.floor(offsetToTarget.length()) + 7; ++i) {
+            Vec3d pos = source.add(normalized.multiply(i));
             if (world instanceof ServerWorld serverWorld) {
                 serverWorld.spawnParticles(WardenParticles.ENDER_SONIC_BOOM,
-                        particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+                        pos.x, pos.y, pos.z, 1, 0.0, 0.0, 0.0, 0.0);
             }
-
             hit.addAll(world.getEntitiesByClass(LivingEntity.class,
-                    new Box(BlockPos.ofFloored(particlePos)).expand(1),
-                    it -> !(it instanceof TameableEntity helper && helper.isOwner(user))));
+                    new Box(BlockPos.ofFloored(pos)).expand(1),
+                    it -> !(it instanceof TameableEntity tame && tame.isOwner(user))));
         }
+
         hit.remove(user);
 
-        for (Entity hitTarget : hit) {
-            if (hitTarget instanceof LivingEntity living) {
+        for (Entity entity : hit) {
+            if (entity instanceof LivingEntity living) {
                 living.damage(world.getDamageSources().sonicBoom(user), 10.0f);
+                Vec3d originalPos = living.getPos();
+                for (int j = 0; j < 16; ++j) {
+                    double dx = living.getX() + (living.getRandom().nextDouble() - 0.5) * 32.0;
+                    double dy = MathHelper.clamp(
+                            living.getY() + (double)(living.getRandom().nextInt(16) - 8),
+                            world.getBottomY(),
+                            world.getBottomY() + ((ServerWorld) world).getLogicalHeight() - 1);
+                    double dz = living.getZ() + (living.getRandom().nextDouble() - 0.5) * 32.0;
 
-                // 32x alan içinde rastgele teleport
-                double range = 16.0;
-                double x = living.getX() + (world.getRandom().nextDouble() * 2 - 1) * range;
-                double z = living.getZ() + (world.getRandom().nextDouble() * 2 - 1) * range;
+                    if (living.hasVehicle()) {
+                        living.stopRiding();
+                    }
 
-                double baseY = living.getY();
-                double y = baseY + (world.getRandom().nextInt(7) - 3); // ±3 blok oynama
+                    if (living.teleport(dx, dy, dz, true)) {
+                        world.emitGameEvent(GameEvent.TELEPORT, originalPos, Emitter.of(living));
 
-                BlockPos groundPos = new BlockPos((int) x, (int) y, (int) z);
-
-                while (world.getBlockState(groundPos).isAir() && groundPos.getY() > world.getBottomY()) {
-                    groundPos = groundPos.down();
-                }
-
-                BlockPos headPos = groundPos.up(2);
-                boolean isSafe =
-                        world.getBlockState(groundPos).isOpaque()
-                                && world.getBlockState(groundPos.up()).isAir()
-                                && world.getBlockState(headPos).isAir();
-
-                if (isSafe) {
-                    Vec3d teleportPos = Vec3d.ofCenter(groundPos.up());
-                    if (living.teleport(teleportPos.x, teleportPos.y, teleportPos.z, true)) {
-                        world.playSound(null, teleportPos.x, teleportPos.y, teleportPos.z,
-                                SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                        world.playSound(null, dx, dy, dz,
+                                SoundEvents.ENTITY_PLAYER_TELEPORT, SoundCategory.BLOCKS, 5.0F, 1.0F);
 
                         if (world instanceof ServerWorld serverWorld) {
-                            serverWorld.spawnParticles(ParticleTypes.PORTAL, teleportPos.x, teleportPos.y, teleportPos.z,
-                                    30, 0.3, 0.3, 0.3, 0.1);
+                            serverWorld.spawnParticles(ParticleTypes.PORTAL, dx, dy, dz, 40, 0.5, 0.5, 0.5, 0.1);
                         }
+
+                        living.onLanding();
+                        break;
                     }
                 }
             }

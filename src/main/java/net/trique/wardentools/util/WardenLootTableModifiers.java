@@ -31,6 +31,11 @@ public class WardenLootTableModifiers {
                                 .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f)))
                                 .conditionally(RandomChanceLootCondition.builder(0.1f))
                         );
+                LootPool.Builder EchoShardPoolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(Items.ECHO_SHARD)
+                                .conditionally(RandomChanceLootCondition.builder(1f))
+                                .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(3.0f))))
+                        .rolls(ConstantLootNumberProvider.create(1));
                 LootPool.Builder EchoApplePoolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(WardenItems.ECHO_APPLE)
                                 .conditionally(RandomChanceLootCondition.builder(0.75f))
@@ -42,6 +47,7 @@ public class WardenLootTableModifiers {
                                 .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
                         .rolls(ConstantLootNumberProvider.create(1));
                 tableBuilder.pool(TemplatePoolBuilder);
+                tableBuilder.pool(EchoShardPoolBuilder);
                 tableBuilder.pool(EchoApplePoolBuilder);
                 tableBuilder.pool(SculkShellPoolBuilder);
             }
