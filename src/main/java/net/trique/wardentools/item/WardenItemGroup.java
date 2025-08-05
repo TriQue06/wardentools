@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.trique.wardentools.WardenTools;
 import net.trique.wardentools.block.WardenBlocks;
-import net.trique.wardentools.potion.WardenPotion;
+import net.trique.wardentools.potion.WardenPotions;
 
 public class WardenItemGroup {
     public static ItemGroup WARDENITEMGROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(WardenTools.MOD_ID, "wardenitemgroup"),
@@ -57,10 +57,10 @@ public class WardenItemGroup {
                         entries.add(WardenItems.SCULK_SHELL);
                         entries.add(WardenItems.SHRIEKER_FANG);
                         entries.add(WardenItems.SCULK_ARROW);
-                        entries.add(PotionContentsComponent.createStack(Items.POTION,WardenPotion.WARDEN_SLAYER_POTION));
-                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION,WardenPotion.WARDEN_SLAYER_POTION));
-                        entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION,WardenPotion.WARDEN_SLAYER_POTION));
-                        entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW,WardenPotion.WARDEN_SLAYER_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.POTION, WardenPotions.SCULK_ADAPTION_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, WardenPotions.SCULK_ADAPTION_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, WardenPotions.SCULK_ADAPTION_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, WardenPotions.SCULK_ADAPTION_POTION));
                     }).build());
     public static void registerWardenGroups() {}
 }

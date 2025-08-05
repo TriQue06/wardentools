@@ -2,13 +2,13 @@ package net.trique.wardentools;
 
 import net.fabricmc.api.ModInitializer;
 import net.trique.wardentools.block.WardenBlocks;
-import net.trique.wardentools.effect.WardenToolsEffects;
+import net.trique.wardentools.effect.WardenEffects;
 import net.trique.wardentools.entity.WardenEntities;
 import net.trique.wardentools.item.WardenArmorMaterials;
 import net.trique.wardentools.item.WardenItemGroup;
 import net.trique.wardentools.item.WardenItems;
 import net.trique.wardentools.particle.WardenParticles;
-import net.trique.wardentools.potion.WardenPotion;
+import net.trique.wardentools.potion.WardenPotions;
 import net.trique.wardentools.util.SonicBoomSound;
 import net.trique.wardentools.util.WardenLootTableModifiers;
 import net.trique.wardentools.world.gen.WardenWorldGeneration;
@@ -28,8 +28,8 @@ public class WardenTools implements ModInitializer {
 		WardenWorldGeneration.generateWardenWorldGen();
 		WardenLootTableModifiers.modifyLootTables();
 		WardenArmorMaterials.initialize();
-		WardenToolsEffects.regEffect();
-		WardenPotion.RegPotion();
+		WardenEffects.registerWardenEffects();
+		WardenPotions.registerWardenPotionRecipes();
 		WardenParticles.regParticles();
 		WardenEntities.registerWardenEntities();
 		LOGGER.info("Warden Tools works properly! Geliştirme sürecinde bana sürekli inanan Neco'ya sevgilerle...");

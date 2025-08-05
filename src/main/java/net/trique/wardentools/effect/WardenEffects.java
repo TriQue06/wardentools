@@ -8,9 +8,9 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.trique.wardentools.WardenTools;
 
-public class WardenToolsEffects {
+public class WardenEffects {
 
-    public static  RegistryEntry<StatusEffect> SCULK_ADAPTION_EFFECT;
+    public static  RegistryEntry<StatusEffect> SCULK_ADAPTION;
 
     private static RegistryEntry<StatusEffect> registerStatuesEffect(StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT,
@@ -19,8 +19,8 @@ public class WardenToolsEffects {
         );
     }
 
-    public static void regEffect(){
-        SCULK_ADAPTION_EFFECT =
+    public static void registerWardenEffects(){
+        SCULK_ADAPTION =
                     registerStatuesEffect(new SculkAdaptionEffect(StatusEffectCategory.BENEFICIAL,0x009295));
         WardenTools.LOGGER.info("Registering Warden Effects");
     }

@@ -7,7 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.world.World;
-import net.trique.wardentools.effect.WardenToolsEffects;
+import net.trique.wardentools.effect.WardenEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,7 +23,7 @@ public abstract class WardenMixin extends HostileEntity {
     @Inject(method = "damage", at = @At(value = "HEAD"))
     private void applyExtraDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (source.getAttacker() instanceof LivingEntity attacker) {
-            StatusEffectInstance effect = attacker.getStatusEffect(WardenToolsEffects.SCULK_ADAPTION_EFFECT);
+            StatusEffectInstance effect = attacker.getStatusEffect(WardenEffects.SCULK_ADAPTION);
             if (effect != null) {
                 this.timeUntilRegen = 0;
                 super.damage(source, amount*3);

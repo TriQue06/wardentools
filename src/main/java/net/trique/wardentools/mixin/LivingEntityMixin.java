@@ -5,7 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.trique.wardentools.effect.WardenToolsEffects;
+import net.trique.wardentools.effect.WardenEffects;
 import net.trique.wardentools.item.WardenArmorMaterials;
 import net.trique.wardentools.item.custom.ArmorEffectItem;
 import org.spongepowered.asm.mixin.Mixin;
@@ -45,7 +45,7 @@ public abstract class LivingEntityMixin {
         LivingEntity self = (LivingEntity)(Object)this;
 
         if (!self.getWorld().isClient()) {
-            if (self.hasStatusEffect(WardenToolsEffects.SCULK_ADAPTION_EFFECT)) {
+            if (self.hasStatusEffect(WardenEffects.SCULK_ADAPTION)) {
                 if (self.hasStatusEffect(StatusEffects.DARKNESS)) {
                     self.removeStatusEffect(StatusEffects.DARKNESS);
                 }

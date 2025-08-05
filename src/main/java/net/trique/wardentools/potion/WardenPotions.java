@@ -9,26 +9,26 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.trique.wardentools.WardenTools;
-import net.trique.wardentools.effect.WardenToolsEffects;
+import net.trique.wardentools.effect.WardenEffects;
 import net.trique.wardentools.item.WardenItems;
 
-public class WardenPotion{
-    public static final RegistryEntry<Potion> WARDEN_SLAYER_POTION =
+public class WardenPotions {
+    public static final RegistryEntry<Potion> SCULK_ADAPTION_POTION =
             Registry.registerReference(Registries.POTION, Identifier.of(WardenTools.MOD_ID, "sculk_adaption"),
                     new Potion(
                             new StatusEffectInstance(
-                                    Registries.STATUS_EFFECT.getEntry(WardenToolsEffects.SCULK_ADAPTION_EFFECT.value()),
+                                    Registries.STATUS_EFFECT.getEntry(WardenEffects.SCULK_ADAPTION.value()),
                                     2400,
                                     0
                             )
                     )
             );
 
-    public static void RegPotion() {
+    public static void registerWardenPotionRecipes() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
-                Potions.STRENGTH,
+                Potions.AWKWARD,
                 WardenItems.WARDEN_SOUL,
-                Registries.POTION.getEntry(WARDEN_SLAYER_POTION.value())
+                Registries.POTION.getEntry(SCULK_ADAPTION_POTION.value())
         ));
     }
 }
